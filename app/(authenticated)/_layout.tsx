@@ -3,7 +3,7 @@ import { Slot, Stack, useRouter } from "expo-router";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { DefaultTheme } from "@react-navigation/native";
-import usePush from "@/hooks/usePush";
+import { usePush } from "@/hooks/usePush";
 
 const Layout = () => {
   usePush();
