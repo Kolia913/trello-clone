@@ -14,23 +14,47 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.verb0t.myTrelloApp"
+      "bundleIdentifier": "com.verb0t.myTrelloApp",
+      "entitlements": {
+        "aps-environment": "development"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.verb0t.myTrelloApp"
+      "package": "com.verb0t.myTrelloApp",
+      "permissions": ["android.permission.RECORD_AUDIO"]
     },
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": ["expo-router", "expo-secure-store"],
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends.",
+          "cameraPermission": "The app accesses your camera to let you take photos.",
+          "microphonePermission": "The app accesses your microphone to let you record audio."
+        }
+      ]
+    ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "23887748-92da-4719-ab60-dc6a7fe8f0b6"
+      }
+    },
+    "owner": "kolia913"
   }
 }
